@@ -1,0 +1,47 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /?                                              Splash.splash
+
+# User nav
+GET     /user/?                                         User.user
+
+# Merchant nav
+GET     /merchant/?                                     Merchant.merchant
+GET     /merchant/dashboard/?                           Merchant.dashboard
+
+# Merchant session actions
+GET     /merchant/login                                 MerchantSession.login
+GET     /merchant/logout                                MerchantSession.logout
+
+# Merchant new account validation
+GET     /validateUniqueUsername                         AccountValidation.validateUniqueUsername
+GET     /validateUniqueEmail                            AccountValidation.validateUniqueEmail
+
+# Menu nav
+GET     /merchant/menu/?                                Menu.menu
+POST    /merchant/item                                  Menu.clickItem
+POST    /merchant/newItem                               Menu.newItem
+POST    /merchant/addItem                               Menu.addItem
+GET     /merchant/addSubcategory                        Menu.addNewSubcategory
+GET     /merchant/addCategory                           Menu.addCategoryWithValidate
+POST    /merchant/checkUniqueItem                       Menu.checkUniqueItem
+GET     /merchant/addList                               Menu.addItemList
+GET     /merchant/resetDatabase                         Menu.resetDatabase
+POST    /merchant/commitCategoryChanges                 Menu.commitCategoryChanges
+POST    /merchant/commitSubcategoryChanges              Menu.commitSubcategoryChanges
+POST    /merchant/commitItemChanges                     Menu.commitItemChanges
+
+# Ignore favicon requests
+GET     /favicon.png                                    404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                        staticDir:public
+
+# Catch all
+*       /{controller}/{action}                          {controller}.{action}
+
+# Import Secure routes
+*       /                                               module:secure

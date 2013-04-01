@@ -1,0 +1,107 @@
+#newCat {
+    margin: 0px 0px 0px 0px;
+}
+
+.newCatText {
+    width: 110px;
+}
+
+input[type="text"] {
+    background-color: rgb(245, 245, 245);
+    font-size: 16px;
+    font-weight: bold;
+    border: 0;
+    box-shadow: 0px 0px;
+    padding: 8px 11px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0px 0px;
+}
+
+.hero-unit {
+    padding: 15px 30px;
+}
+
+a {
+    color: rgb(100, 100, 100);
+}
+
+.item-pane {
+    background-color: rgb(255, 255, 255);
+}
+
+.well-small {
+    padding: 0px;
+}
+
+.tabs-left > .nav-tabs {
+    margin-right: 0px;
+    border-right: 0px;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+    color: rgb(85, 85, 85);
+    cursor: default;
+    background-color: rgb(255, 255, 255);
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221) rgb(221, 221, 221) transparent;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+}
+
+.nav-tabs > li {
+    margin-bottom: -3px;
+}
+
+.nav-tabs > li > a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 20px;
+    border: 0;
+}
+
+.tabs-left > .nav-tabs > li > a {
+    margin-right: 0px;
+    border-radius: 0px 0px 0px 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.tabs-left > .nav-tabs > li > a:hover, .tabs-left > .nav-tabs > li > a:focus {
+    border-color: rgb(238, 238, 238) rgb(221, 221, 221) rgb(238, 238, 238) rgb(238, 238, 238);
+    color: rgb(40, 40, 40);
+}
+
+.nav-header {
+    color: rgb(100, 100, 100);
+    font-size: 15px;
+    text-transform: none;
+    padding: 3px 15px;
+}
+
+.sidebar-nav {
+    padding-bottom: 15px;
+    min-height: 120px;
+}
+
+a:hover, a:focus {
+    color: rgb(40, 40, 40);
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav > li > a:focus {
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+    background-color: rgb(255, 255, 255);
+}

@@ -1,0 +1,36 @@
+#{extends 'main.html' /}
+#{set title:'qu - Merchant Dashboard' /}
+
+#{if account}
+#{set username:account.username /}
+#{/if}
+
+<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/Merchant/dashboard.css'}">
+
+<div class="container">
+    <div class="row span11 well well-small">
+        <h1 class="dashboard-header">Dashboard</h1>
+        
+        <div class="row span11 left-row top-row">
+            <a href="menu" class="span5 well dashboard-anchor">
+                <h3 class="dashboard-title">Edit Menu</h3>
+                <img width="200" height="200" class="featurette-image img-rounded dashboard-image" src="@{'/public/img/Menu.png'}">
+            </a>
+            <a href="#" class="span5 well dashboard-anchor">
+                <h3 class="dashboard-title">Preview</h3>
+                <img width="200" height="200" class="featurette-image img-rounded dashboard-image" src="@{'/public/img/Preview.png'}">
+            </a>
+        </div>
+        <div class="row span11 left-row">
+            <a href="#" class="span5 well dashboard-anchor">
+                <h3 class="dashboard-title">Monitor Activity</h3>
+                <img width="200" height="200" class="featurette-image img-rounded dashboard-image" src="@{'/public/img/Monitor.png'}">
+            </a>
+            <a href="#" class="span5 well dashboard-anchor">
+                <h3 class="dashboard-title">Settings</h3>
+                <img width="200" height="200" class="featurette-image img-rounded dashboard-image" src="@{'/public/img/Settings.png'}">
+            </a>
+        </div>
+        
+    </div>
+</div>

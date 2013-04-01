@@ -1,0 +1,94 @@
+#{extends 'main.html' /}
+#{set title:'qu' /}
+
+#{if account}
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/Application/index.css'}">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span4 well well-small">
+                <div class="tabbable tabs-left">
+                    <ul class="nav nav-tabs">
+                        #{list items:account.categories, as:'category'}<li id="cat-${category.id}"><a class="category-tab" href="#tab${category.id}" data-toggle="tab" id="${category.id}">${category.title}</a></li>
+                        #{/list}<li id="addCategory"><a id="addCategoryButton" href="#" style="font-weight:normal;font-size:15px;"><i class="icon-plus"></i>&nbsp&nbspAdd Category</a>
+                    </ul>
+                    <div class="tab-content item-pane">
+                        #{list items:account.categories, as:'category'}<div class="tab-pane" id="tab${category.id}">
+                            <div class="sidebar-nav">
+                                <ul class="nav nav-list">
+                                    #{list items:category.subcategories, as:'subcategory'}<li class="nav-header"><a href="#" data-toggle="collapse" data-target="#sub${subcategory.id}" id="${subcategory.id}"><i class="icon-chevron-down" id="icon${subcategory.id}">&nbsp&nbsp&nbsp&nbsp${subcategory.subTitle}</i></a></li>
+                                    <li>
+                                        <div class="collapse in" id="sub${subcategory.id}" data-ic="${subcategory.id}">
+                                            <ul class="nav nav-list">
+                                                #{list items:subcategory.items, as:'menuItem'}<li>
+                                                    <a class="menuItem" id="${menuItem.id}" href="#">
+                                                        <span>&nbsp&nbsp&nbsp&nbsp${menuItem.itemTitle}</span><span class="pull-right">$${menuItem.price.format('0.00')}</span>
+                                                    </a>
+                                                </li>
+                                            #{/list}</ul>
+                                        </div>
+                                    </li>
+                                #{/list}</ul>
+                            </div> 
+                        </div>
+                    #{/list}</div>
+                </div>
+            </div>
+            <div class="span8">
+                <div class="well hero-unit" id="itemTarget">
+                    <h2>Welcome, Starbucks!</h2>
+                    <small>The details will appear here.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            
+            var itemAction = #{jsAction @MenuNavigation.clickItem(':id')/};
+            
+            $('.category-tab').first().parent().addClass('active');
+            $('.tab-pane').first().addClass('active');
+            
+            $('a.menuItem').click(function() {
+                $('#itemTarget').load(itemAction({id: this.id}));
+            });
+            
+            $('.collapse').on('show', function() {
+                $('#icon' + this.dataset.ic).removeClass('icon-chevron-right').addClass('icon-chevron-down');
+            });
+            
+            $('.collapse').on('hide', function() {
+                $('#icon' + this.dataset.ic).removeClass('icon-chevron-down').addClass('icon-chevron-right');
+            });
+            
+            $('#addCategoryButton').click(function() {
+                var list = $('<li>').attr('style', 'margin-bottom:0px');
+                var input = $('<input>').attr('type', 'text').addClass('input').attr('placeholder', 'New Category').addClass('newCatText');
+                var submit = $('<input>').attr('type', 'submit').hide();
+                var form = $('<form>').attr('action', '#').addClass('form-inline').attr('id', 'newCat');
+                var formAction = #{jsAction @MenuNavigation.addCategoryWithValidate(':accountId', ':title')/};
+                var listAction = #{jsAction @MenuNavigation.addItemList(':accountId', ':title')/};
+                form.submit(function() {
+                    $.get(formAction({accountId: '${account.id}', title: input.val()}), function(data) {
+                        $('#addCategory').before(data);
+                        list.hide();
+                        $.get(listAction({accountId: '${account.id}', title: input.val()}), function(listData) {
+                            $('.tab-content.item-pane').append(listData);
+                            $('.category-tab').last().click();
+                            list.remove();
+                            return false;
+                        });
+                        return false;
+                    });
+                    return false;
+                });
+                list.append(form.append(input).append(submit));
+                list.insertBefore('#addCategory');
+                input.focus();
+                input.on('blur', function() {
+                    list.remove();
+                });
+            });
+        });
+    </script>
+#{/if}

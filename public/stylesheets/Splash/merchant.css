@@ -1,0 +1,44 @@
+.upgrade-header {
+    margin-bottom: 30px;
+    margin-left: 17px;
+    color: black;
+}
+
+fieldset > legend > h2 {
+    font-size: 25px;
+}
+
+.featurette-heading {
+    font-size: 25px;
+}
+
+.lead {
+    font-size: 17px;
+    line-height: 19px;
+}
+
+.featurette > .pull-left {
+    margin-right: 20px;
+}
+
+.featurette > .pull-right {
+    margin-left: 20px;
+}
+
+small > i.icon-user {
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-top: -1px;
+}
+
+.form-horizontal .controls {
+    margin-left: 100px;
+}
+
+.form-horizontal .control-label {
+    width: 80px;
+}
+
+button.btn.pull-right {
+    margin-top: -30px;
+}

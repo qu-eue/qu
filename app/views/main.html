@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="${_response_encoding}">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/bootstrap.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/img/favicon.ico'}">
+        <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+        <script src="@{'/public/javascripts/bootstrap.js'}" type="text/javascript"></script>
+        <script src="@{'/public/javascripts/jquery.color.js'}" type="text/javascript"></script>
+        <script src="@{'/public/javascripts/main.js'}" type="text/javascript"></script>
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+    #{get 'moreScripts' /}</head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right">
+                            <li>
+                                <a href="/merchant/menu" title="Edit Menu" class="list-icon navbar-link nohover">
+                                    <i width="100px" class="icon-th-list icon-white icon-nav">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/merchant/menu" title="Preview Menu" class="list-icon navbar-link nohover">
+                                    <i class="icon-eye-open icon-white icon-nav">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/merchant/menu" title="Menu Settings" class="list-icon navbar-link nohover">
+                                    <i class="icon-wrench icon-white icon-nav">
+                                    </i>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="navbar-text dropdown">
+                                    <a href="#" id="login-menu" class="login-icon navbar-link nohover dropdown-toggle" data-toggle="dropdown">
+                                        <i class="icon-user icon-white">
+                                        </i>
+                                        #{if username}#{get 'username' /}#{/if}#{else}Login#{/else}
+                                        
+                                    </a>
+                                    <ul class="dropdown-menu pull-right" role="menu" area-labelledby="dLabel">
+                                        #{if username}<li>
+                                            <a tabindex="-1" href="#" id="logout-button">
+                                                <i class="icon-remove-sign">
+                                                </i>
+                                                Log out
+                                            </a>
+                                        </li>#{/if}#{else}
+                                        <li>
+                                            <form class="form-inline login-form">
+                                                <input type="text" class="input-small" id="login-username" placeholder="Username">
+                                                <input type="password" class="input-small" id="login-password" placeholder="Password">
+                                                <button type="submit" class="btn" id="login-submit">Go</button>
+                                            </form>
+                                        </li>
+                                    #{/else}
+                                    
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li>
+                                <a class="brand active" href="/merchant/menu" style="font-size:30px">
+                                    qu
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>#{doLayout /}
+        
+    </body>
+</html>

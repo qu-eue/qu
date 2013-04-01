@@ -1,0 +1,44 @@
+body {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+a.nohover:hover, a.nohover:focus {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+i {
+    margin-right: 5px;
+}
+
+i.icon-nav {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.navbar .nav > li > a.list-icon {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+a.login-icon {
+    margin-left: 18px;
+}
+
+a.brand {
+    margin-top: -3px;
+}
+
+form.login-form {
+    min-width: 300px;
+    margin: 0px 5px;
+}
+
+.navbar .btn#login-submit {
+    margin-top: 0px;
+    margin-left: 15px;
+}

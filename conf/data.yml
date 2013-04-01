@@ -1,0 +1,288 @@
+# Test data
+
+Account(karel):
+    username:       karel1990
+    email:          karel@gmail.com
+    password:       password
+    
+Account(java):
+    username:       amy
+    email:          java@gmail.com
+    password:       remember
+    
+menu.Category(food):
+    title:          Food
+    account:        karel
+    
+menu.Category(drinks):
+    title:          Drinks
+    account:        karel
+        
+menu.Category(grub):
+    title:          Grub
+    account:        java
+    
+menu.Category(refreshments):
+    title:          Refreshments
+    account:        java
+    
+menu.Subcategory(cold):
+    subTitle:       Cold
+    category:       food
+    account:        karel
+    
+menu.Subcategory(hot):
+    subTitle:       Hot
+    category:       food
+    account:        karel
+
+menu.Subcategory(coffee):
+    subTitle:       Coffee
+    category:       drinks
+    account:        karel
+    
+menu.Subcategory(tea):
+    subTitle:       Tea
+    category:       drinks
+    account:        karel
+    
+menu.Subcategory(sandwich):
+    subTitle:       Sandwich
+    category:       grub
+    account:        java
+    
+menu.Subcategory(soup):
+    subTitle:       Soup
+    category:       grub
+    account:        java
+
+menu.Subcategory(smoothie):
+    subTitle:       Smoothie
+    category:       refreshments
+    account:        java
+    
+menu.Subcategory(juice):
+    subTitle:       Juice
+    category:       refreshments
+    account:        java
+    
+menu.Subcategory(beer):
+    subTitle:       Beer
+    category:       refreshments
+    account:        java
+
+menu.Item(sushi):
+    itemTitle:      Sushi
+    price:          4.50
+    subcategory:    cold
+    account:        karel
+    
+menu.Item(cereal):
+    itemTitle:      Cereal
+    price:          2.50
+    subcategory:    cold
+    account:        karel
+    
+menu.Item(tunaSalad):
+    itemTitle:      Tuna Salad
+    price:          5.00
+    subcategory:    cold
+    account:        karel
+    
+menu.Item(oatmeal):
+    itemTitle:      Oatmeal
+    price:          3.50
+    subcategory:    hot
+    account:        karel
+
+menu.Item(bagel):
+    itemTitle:      Bagel
+    price:          1.50
+    subcategory:    hot
+    account:        karel
+    
+menu.Item(toast):
+    itemTitle:      Toast
+    price:          1.00
+    subcategory:    hot
+    account:        karel
+    
+menu.Item(breakfastBurrito):
+    itemTitle:      Breakfast Burrito
+    price:          5.50
+    subcategory:    hot
+    account:        karel
+    
+menu.Item(houseCoffee):
+    itemTitle:      House Coffee
+    price:          1.00
+    subcategory:    coffee
+    account:        karel
+    
+menu.Item(darkCoffee):
+    itemTitle:      Dark Coffee
+    price:          1.50
+    subcategory:    coffee
+    account:        karel
+    
+menu.Item(americano):
+    itemTitle:      Americano
+    price:          1.50
+    subcategory:    coffee
+    account:        karel
+    
+menu.Item(espresso):
+    itemTitle:      Espresso
+    price:          0.75
+    subcategory:    coffee
+    account:        karel
+    
+menu.Item(greenTea):
+    itemTitle:      Green Tea
+    price:          1.00
+    subcategory:    tea
+    account:        karel
+    
+menu.Item(blackTea):
+    itemTitle:      Black Tea
+    price:          1.00
+    subcategory:    tea
+    account:        karel
+    
+menu.Item(icedTea):
+    itemTitle:      Iced Tea
+    price:          2.00
+    subcategory:    tea
+    account:        karel
+    
+menu.Item(milkTea):
+    itemTitle:      Milk Tea
+    price:          2.50
+    subcategory:    tea
+    account:        karel
+    
+menu.Item(mintTea):
+    itemTitle:      Mint Tea
+    price:          1.25
+    subcategory:    tea
+    account:        karel
+    
+menu.Item(blt):
+    itemTitle:      BLT
+    price:          5.00
+    subcategory:    sandwich
+    account:        java
+    
+menu.Item(italian):
+    itemTitle:      Italian
+    price:          5.50
+    subcategory:    sandwich
+    account:        java
+    
+menu.Item(tunaMelt):
+    itemTitle:      Tuna Melt
+    price:          5.00
+    subcategory:    sandwich
+    account:        java
+    
+menu.Item(meatballSub):
+    itemTitle:      Meatball Sub
+    price:          5.50
+    subcategory:    sandwich
+    account:        java
+    
+menu.Item(roastBeef):
+    itemTitle:      Roast Beef
+    price:          5.75
+    subcategory:    sandwich
+    account:        java
+    
+menu.Item(clamChowder):
+    itemTitle:      Clam Chowder
+    price:          3.50
+    subcategory:    soup
+    account:        java
+    
+menu.Item(italianWedding):
+    itemTitle:      Italian Wedding
+    price:          3.75
+    subcategory:    soup
+    account:        java
+    
+menu.Item(minestrone):
+    itemTitle:      Minestrone
+    price:          3.25
+    subcategory:    soup
+    account:        java
+    
+menu.Item(mango):
+    itemTitle:      Mango
+    price:          3.75
+    subcategory:    smoothie
+    account:        java
+    
+menu.Item(berry):
+    itemTitle:      Berry
+    price:          3.75
+    subcategory:    smoothie
+    account:        java
+    
+menu.Item(greenTeaMatcha):
+    itemTitle:      Green Tea Matcha
+    price:          4.00
+    subcategory:    smoothie
+    account:        java
+    
+menu.Item(orange):
+    itemTitle:      Orange
+    price:          2.00
+    subcategory:    juice
+    account:        java
+    
+menu.Item(apple):
+    itemTitle:      Apple
+    price:          2.25
+    subcategory:    juice
+    account:        java
+    
+menu.Item(pineapple):
+    itemTitle:      Pineapple
+    price:          2.50
+    subcategory:    juice
+    account:        java
+    
+menu.Item(banana):
+    itemTitle:      Banana
+    price:          2.50
+    subcategory:    juice
+    account:        java
+    
+menu.Item(blueMoon):
+    itemTitle:      Blue Moon
+    price:          4.50
+    subcategory:    beer
+    account:        java
+    
+menu.Item(pyramidApricotAle):
+    itemTitle:      Pyramid Apricot Ale
+    price:          4.75
+    subcategory:    beer
+    account:        java
+    
+menu.Item(coorsLight):
+    itemTitle:      Coors Light
+    price:          3.50
+    subcategory:    beer
+    account:        java
+    
+menu.Item(xx):
+    itemTitle:      XX
+    price:          3.75
+    subcategory:    beer
+    account:        java
+    
+menu.Item(corona):
+    itemTitle:      Corona
+    price:          3.75
+    subcategory:    beer
+    account:        java

@@ -1,0 +1,12 @@
+#{if sub}
+    <script type="text/javascript">
+        var itemAction = #{jsAction @MenuNavigation.clickItem(':id')/};
+        $('a.menuItem').click(function() {
+            $('#itemTarget').load(itemAction({id: this.id}));
+        });
+    </script>
+    <ul class="nav nav-list">
+        <li class="nav-header">${sub.subTitle}</li>
+        #{list items:sub.items, as:'item'}<li><a class="menuItem" id="${item.id}" href="#">${item.itemTitle}</a></li>
+        #{/list}</ul>
+#{/if}

@@ -1,0 +1,78 @@
+#{extends 'main.html' /}
+#{set title:'qu' /}
+        
+#{if account}
+        #{set username:account.username /}<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/Menu/menu.css'}">
+        <script src="@{'/public/javascripts/menu/menu.js'}" type="text/javascript"></script>
+        
+        <div class="container">
+            <div class="overflow-container row span11 well well-small">
+                <h1 id="menu-header">Editable Menu Name<a href="#" id="publish-button" class="committed"><i class="icon-star pull-right" id="publish-icon" title="Publish"></i><img style="display:none" src="@{'/public/img/loading.gif'}" class="pull-right" id="publish-icon-loading" title="Loading"></img></a></h1>
+                <div class="span6" id="tab-container">
+                    <div class="tabbable tabs-left" id="menu-container">
+                        <ul class="nav nav-tabs">
+                            #{list items:account.categories, as:'category'}<li>
+                                <a class="category-tab" href="#${category.title}" category-title="${category.title}" category-id="${category.id}" data-toggle="tab">${category.title}
+                                </a>
+                            </li><!--end of category list item-->
+                            #{/list}<li id="add-category">
+                                <a id="add-category-button" href="#">
+                                    <i id="add-category-icon" class="icon-plus">
+                                    </i>
+                                    Add Category
+                                </a>
+                            </li><!--end of add category item-->
+                        </ul><!--end of category tabs pane-->
+                        <div class="tab-content subcategory-column">#{list items:account.categories, as:'category'}
+                        
+                            <div class="tab-pane sidebar-nav" id="${category.title}">
+                                <ul class="nav nav-list sub-high">
+                                    #{list items:category.subcategories, as:'subcategory'}<li class="nav-header" subcategory-title="${subcategory.subTitle}" subcategory-id="${subcategory.id}">
+                                        <span>
+                                            <i class="icon-chevron-down" id="icon-${subcategory.subTitle}" data-toggle="collapse" data-target="#sub-${subcategory.subTitle}">
+                                                <a class="subtitle-text" data-toggle="collapse" data-target="#sub-${subcategory.subTitle}">${subcategory.subTitle}
+                                                </a>
+                                            </i>
+                                            <a class="add-item-button pull-right"><i class="icon-plus-sign" id="add-item-icon"></i>Add Item</a>
+                                        </span>
+                                    </li><!--end of subcategory list item-->
+                                    <li class="subcategory-list-data">
+                                        <div class="collapse in subcategory-collapse" id="sub-${subcategory.subTitle}" subcategory-title="${subcategory.subTitle}">
+                                            <ul class="nav nav-list sub-low">#{list items:subcategory.items, as:'menuItem'}
+                                            
+                                                <li>
+                                                    <a class="menu-item" category-title="${category.title}" subcategory-title="${subcategory.subTitle}" item-id="${menuItem.id}" href="#" item-title="${menuItem.itemTitle}" item-price="${menuItem.price}">
+                                                        <span class="item-text">${menuItem.itemTitle}</span><span class="pull-right item-price">$${menuItem.price.format('0.00')}</span>
+                                                    </a>
+                                                </li><!--end of item list item-->
+                                            #{/list}</ul><!--end of item list-->
+                                        </div>
+                                    </li><!--end of item collapse group-->
+                                    #{/list}<li id="add-subcategory">
+                                        <a id="add-subcategory-button" href="#">
+                                            <i id="add-subcategory-icon" class="icon-plus">
+                                            </i>
+                                            Add Subcategory
+                                        </a>
+                                    </li><!--end of add subcategory item-->
+                                </ul><!--end of subcategory list-->
+                            </div><!--end of category's subcategory div-->
+                        #{/list}</div><!--end of subcategory pane-->
+                    </div><!--end of category-subcategory pane-->
+                </div>
+                <div class="span4" id="item-target">
+                    <h2>Welcome, ${account.username}!</h2>
+                    <small>The details will appear here.</small>
+                </div><!--end of item details pane-->
+            </div>
+        </div>
+        
+        <button class="btn" type="button" id="reset-database">Reset Database</button>
+        <button onclick="window.location.href='http://cdn.dashburst.com/wp-content/uploads/2013/01/Grumpy-Cat.jpg'" class="btn" type="button" id="grumpy"></button>
+#{/if}
+        
+#{else}
+        <h1 style="margin-left:50px">
+            You are not properly logged in.
+        </h1>
+#{/else}

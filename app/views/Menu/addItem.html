@@ -1,0 +1,6 @@
+#{if FAILURE}failure#{/if}#{else}<li>
+    <a class="menu-item" category-title="${categoryTitle}" subcategory-title="${subcategoryTitle}" href="#" item-title="${itemTitle}" item-price="${itemPrice}">
+        <span class="item-text">${itemTitle}</span><span class="pull-right item-price">$${itemPrice.format('0.00')}</span>
+    </a>
+</li>
+#{/else}

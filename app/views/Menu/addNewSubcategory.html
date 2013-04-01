@@ -1,0 +1,16 @@
+#{if failed}failed#{/if}#{else}<li class="nav-header" subcategory-title="${title}">
+    <span>
+        <i class="icon-chevron-down" id="icon-${title}" data-toggle="collapse" data-target="#sub-${title}">
+            <a class="subtitle-text" data-toggle="collapse" data-target="#sub-${title}">${title}
+            </a>
+        </i>
+        <a class="add-item-button pull-right"><i class="icon-plus-sign" id="add-item-icon"></i>Add Item</a>
+    </span>
+</li><!--end of subcategory list item-->
+<li class="subcategory-list-data">
+    <div class="collapse in subcategory-collapse" id="sub-${title}" subcategory-title="${title}">
+        <ul class="nav nav-list sub-low">
+        </ul><!--end of item list-->
+    </div>
+</li><!--end of item collapse group-->
+#{/else}

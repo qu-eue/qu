@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'qu - Main Page' /}
+
+#{if account}
+#{set username:account.username /}
+#{/if}
+
+<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/Splash/splash.css'}">
+
+<div class="container">
+    <div class="row">
+        <div class="span4 offset2">
+            <h4>I am a...</h4>
+            <a class="choice" href="user">
+                <div class="span3 well well-small">
+                    <h3>Coffelover /</h3>
+                    <h3>Tea Connoisseur /</h3>
+                    <h3>Muffin Muncher</h3>
+                </div>
+            </a>
+        </div>
+        <div class="span4">
+            <h4>I am a...</h4>
+            <a class="choice" href="merchant">
+                <div class="span3 well well-small">
+                    <h3>Barista /</h3>
+                    <h3>Latte Artist /</h3>
+                    <h3>Cafe Manager</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
