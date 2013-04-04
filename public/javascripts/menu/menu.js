@@ -26,8 +26,8 @@ function resetContextMenu() {
 // Startup functions-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
 $(document).ready(function () {
-    //$('.category-tab').first().parent().addClass('active');
-    //$('.tab-pane').first().addClass('active');
+    $('.category-tab').first().parent().addClass('active');
+    $('.tab-pane').first().addClass('active');
 });
 
 

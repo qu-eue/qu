@@ -1,9 +1,9 @@
 # Test data
 
 Account(karel):
-    username:       karel1990
+    username:       bjw
     email:          karel@gmail.com
-    password:       password
+    password:       sawp
     
 Account(java):
     username:       amy
